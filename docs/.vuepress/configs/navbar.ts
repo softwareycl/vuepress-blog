@@ -40,7 +40,7 @@ export const navbarZh: NavbarConfig = [
     ],
   },
   {
-    text: '页面',
+    text: '日记',
     link: '/ui/',
     children: [
       { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
@@ -70,13 +70,5 @@ export const navbarZh: NavbarConfig = [
     ],
   },
   { text: '关于', link: '/about/' },
-  {
-    text: '收藏',
-    link: '/pages/beb6c0bd8a66cea6/',
-    // children: [
-    //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
-    //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-    //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
-    // ],
-  },
+  { text: '收藏', link: '/collection/' },
 ]

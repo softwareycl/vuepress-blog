@@ -7,12 +7,16 @@ features:
 - title: VUE相关
   details: Vue相关技术。
 - title: 前端
-  details: JavaScript、ES6、egg框架等前端技术。
-- title: 页面
-  details: html(5)/css(3)，前端页面相关技术。
-- title: 前端可视化
-  details: 前端方面可视化的知识，包括webgl,canvas,glsl等。
+  details: html、css、JavaScript、前端框架等前端技术。
+- title: 日记
+  details: 工作、日常开发中遇到的问题记录。
 - title: 技术
   details: 技术文档、教程、技巧、总结等文章。
+- title: 更多
+  details: 学习、面试、日常等杂七杂八的事。
+- title: 关于
+  details: 站点简单介绍。
+- title: 收藏
+  details: 各种收藏网站，方便之后查找。
 footer: MIT Licensed | Copyright © 2022-present CL
 ---
