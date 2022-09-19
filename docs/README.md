@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/avater.png
+heroImage: /images/logo.png
 heroText: null
 tagline: 记录日常，快乐摸鱼
 features:

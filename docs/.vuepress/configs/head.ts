@@ -5,13 +5,12 @@ export const head: HeadConfig[] = [
     'link',
     {
       rel: 'icon',
-      sizes: '16x16',
-      href: `/images/favicon.ico`,
+      href: `/images/logo.png`,
     },
   ],
   [
     'link',
-    { rel: 'apple-touch-icon', href: `/images/avater.png` },
+    { rel: 'apple-touch-icon', href: `/images/logo.png` },
   ],
   ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
   ['meta', { name: 'theme-color', content: '#3eaf7c' }],

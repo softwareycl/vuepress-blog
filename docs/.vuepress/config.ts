@@ -11,7 +11,7 @@ export default defineUserConfig({
   title: 'CL鱼塘',
   head,
   theme: defaultTheme({
-    logo: "/images/avater.png",
+    logo: "/images/logo.png",
     home: "/",
     repo: "softwareycl",
     navbar: navbarZh,
