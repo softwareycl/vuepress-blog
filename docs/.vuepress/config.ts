@@ -42,5 +42,6 @@ export default defineUserConfig({
       '看起来我们进入了错误的链接',
     ],
     backToHome: '返回首页',
+    contributors: false
   }),
 });
