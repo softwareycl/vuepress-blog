@@ -29,4 +29,21 @@ export const sidebarZh: SidebarConfig = {
       ],
     },
   ],
+  '/collection/': [
+    {
+      text: '网站',
+      collapsible: true,
+      children: [
+        '/collection/CL网站.md',
+      ],
+    },
+    {
+      text: 'evan的收藏',
+      collapsible: true,
+      children: [
+        '/collection/网站.md',
+        '/collection/常用的前端轮子.md',
+      ],
+    }
+  ],
 }

@@ -1,3 +1,3 @@
 # 关于
 
-这是一个网站。。。已完不续！
+根据vuepress-theme-vdoing来做的~。~

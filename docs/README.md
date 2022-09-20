@@ -7,7 +7,7 @@ features:
 - title: VUE相关
   details: Vue相关技术。
 - title: 前端
-  details: html、css、JavaScript、前端框架等前端技术。
+  details: html、css、js、小程序、框架等前端技术。
 - title: 日记
   details: 工作、日常开发中遇到的问题记录。
 - title: 技术
@@ -17,6 +17,6 @@ features:
 - title: 关于
   details: 站点简单介绍。
 - title: 收藏
-  details: 各种收藏网站，方便之后查找。
+  details: 各种收藏网站，方便摸鱼。
 footer: MIT Licensed | Copyright © 2022-present CL
 ---
