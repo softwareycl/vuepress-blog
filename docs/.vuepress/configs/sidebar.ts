@@ -1,3 +1,10 @@
+/*
+ * @Author: CL
+ * @Date: 2022-09-18 22:14:11
+ * @LastEditors: CL
+ * @LastEditTime: 2022-09-21 14:53:33
+ * @Description: 
+ */
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const sidebarZh: SidebarConfig = {
@@ -7,8 +14,6 @@ export const sidebarZh: SidebarConfig = {
       collapsible: true,
       children: [
         '/vue/Vue-I18n.md',
-        '/vue/1.md',
-        '/vue/2.md',
       ],
     },
     {
