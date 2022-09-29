@@ -4,6 +4,10 @@ sidebarDepth: 1
 
 # 个人收藏夹
 
+## 推荐
+
+[Evan收藏](https://b.xugaoyi.com/pages/beb6c0bd8a66cea6/)
+
 ## vscode 配置
 
 * [简单一步到位同步你的 VSCode 全部配置](https://blog.csdn.net/weixin_43131046/article/details/123118022)
