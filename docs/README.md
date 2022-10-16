@@ -8,7 +8,7 @@ features:
   details: Vue相关技术。
 - title: 前端
   details: html、css、js、小程序、框架等前端技术。
-- title: 日记
+- title: 笔记
   details: 工作、日常开发中遇到的问题记录。
 - title: 技术
   details: 技术文档、教程、技巧、总结等文章。

@@ -40,7 +40,7 @@ export const navbarZh: NavbarConfig = [
   {
     text: '笔记',
     children: [
-      { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
+      { text: '工作', link: '/note/work/首脑.md' },
     ],
   },
   {
