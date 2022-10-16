@@ -24,3 +24,7 @@ git commit -m 'deploy'
 git push -f git@github.com:softwareycl/vuepress-blog.git master:gh-pages
 
 cd -
+
+echo 按任意键继续
+read -n 1
+echo 继续运行
