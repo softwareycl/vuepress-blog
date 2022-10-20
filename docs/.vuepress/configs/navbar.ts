@@ -6,6 +6,12 @@ export const navbarZh: NavbarConfig = [
     text: 'VUE相关',
     children: [
       {
+        text: 'VUE3',
+        children: [
+          '/vue/vue3/README.md'
+        ]
+      },
+      {
         text: '国际化',
         children: [
           '/vue/Vue-I18n.md'

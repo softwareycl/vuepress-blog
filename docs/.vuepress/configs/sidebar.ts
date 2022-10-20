@@ -2,13 +2,20 @@
  * @Author: CL
  * @Date: 2022-09-18 22:14:11
  * @LastEditors: CL
- * @LastEditTime: 2022-10-16 15:57:24
+ * @LastEditTime: 2022-10-20 21:30:01
  * @Description: 
  */
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const sidebarZh: SidebarConfig = {
   '/vue/': [
+    {
+      text: 'VUE3',
+      collapsible: true,
+      children: [
+        '/vue/vue3/README.md',
+      ],
+    },
     {
       text: '国际化',
       collapsible: true,
