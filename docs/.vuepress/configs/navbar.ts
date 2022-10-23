@@ -12,15 +12,9 @@ export const navbarZh: NavbarConfig = [
         ]
       },
       {
-        text: '国际化',
+        text: '其他',
         children: [
-          '/vue/Vue-I18n.md'
-        ],
-      },
-      {
-        text: '路由',
-        children: [
-          '/vue/3.md',
+          '/vue/other/Vue-I18n.md'
         ],
       },
     ],
@@ -33,12 +27,6 @@ export const navbarZh: NavbarConfig = [
         text: '前端文章',
         children: [
           { text: 'JavaScript', link: '/pages/' },
-        ],
-      },
-      {
-        text: '学习笔记',
-        children: [
-          { text: '《JavaScript教程》', link: '/note/javascript/' },
         ],
       },
     ],
@@ -64,7 +52,6 @@ export const navbarZh: NavbarConfig = [
     children: [
       { text: '学习', link: '/pages/f2a556/' },
       { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-      { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
       { text: '实用技巧', link: '/pages/baaa02/' },
     ],
   },

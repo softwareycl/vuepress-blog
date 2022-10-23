@@ -2,13 +2,13 @@
  * @Author: CL
  * @Date: 2022-09-18 22:14:11
  * @LastEditors: CL
- * @LastEditTime: 2022-10-20 21:30:01
+ * @LastEditTime: 2022-10-23 16:11:11
  * @Description: 
  */
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const sidebarZh: SidebarConfig = {
-  '/vue/': [
+  '/vue/vue3': [
     {
       text: 'VUE3',
       collapsible: true,
@@ -16,18 +16,13 @@ export const sidebarZh: SidebarConfig = {
         '/vue/vue3/README.md',
       ],
     },
+  ],
+  '/vue/other': [
     {
       text: '国际化',
       collapsible: true,
       children: [
-        '/vue/Vue-I18n.md',
-      ],
-    },
-    {
-      text: '路由',
-      collapsible: true,
-      children: [
-        '/vue/3.md',
+        '/vue/other/Vue-I18n.md',
       ],
     },
   ],
