@@ -21,3 +21,11 @@ sidebarDepth: 1
 * [hoppscotch 在线调试](https://hoppscotch.io/cn)
 
 * [iconfont 图标库](https://www.iconfont.cn/)
+
+## Vue组件
+
+* [v-calendar 日历组件](https://vcalendar.io/)
+
+## js库
+
+* [jsQR 二维码识别](https://github.com/cozmo/jsQR)
