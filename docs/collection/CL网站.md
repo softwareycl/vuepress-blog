@@ -15,6 +15,7 @@ sidebarDepth: 1
 ## CSS
 
 * [CSSFX 简单精美的css效果](https://cssfx.netlify.app/)
+* [带你探索神秘的“幽灵空白节点”](https://zhuanlan.zhihu.com/p/391118319)
 
 ## 工具
 
@@ -29,3 +30,7 @@ sidebarDepth: 1
 ## js库
 
 * [jsQR 二维码识别](https://github.com/cozmo/jsQR)
+
+## 安全
+
+* [理解 JWT 的使用场景和优劣](https://blog.csdn.net/rudyshang/article/details/124119622)
