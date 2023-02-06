@@ -6,7 +6,8 @@ sidebarDepth: 1
 
 ## 推荐
 
-[Evan收藏](https://b.xugaoyi.com/pages/beb6c0bd8a66cea6/)
+* [Evan收藏](https://b.xugaoyi.com/pages/beb6c0bd8a66cea6/)
+* [Hooray收藏](https://hooray.github.io/)
 
 ## vscode 配置
 
