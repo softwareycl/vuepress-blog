@@ -21,12 +21,14 @@ sidebarDepth: 1
 ## 工具
 
 * [hoppscotch 在线调试](https://hoppscotch.io/cn)
-
 * [iconfont 图标库](https://www.iconfont.cn/)
 
-## Vue组件
+## 组件库
 
 * [v-calendar 日历组件](https://vcalendar.io/)
+* [wangEditor 富文本编辑起](https://www.wangeditor.com/)
+* [DataV 数据大屏](http://datav.jiaminghi.com/)
+* [tcplayer 播放器](https://cloud.tencent.com/document/product/266/58772)
 
 ## js库
 
