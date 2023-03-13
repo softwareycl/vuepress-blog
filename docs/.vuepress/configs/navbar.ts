@@ -1,3 +1,10 @@
+/*
+ * @Author: 颜常霖
+ * @Date: 2022-09-20 09:51:55
+ * @LastEditors: 颜常霖
+ * @LastEditTime: 2023-03-13 17:36:36
+ * @Description:  
+ */
 import type { NavbarConfig } from '@vuepress/theme-default'
 
 export const navbarZh: NavbarConfig = [
@@ -24,9 +31,9 @@ export const navbarZh: NavbarConfig = [
     children: [
       // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
       {
-        text: '前端文章',
+        text: 'WebRTC',
         children: [
-          { text: 'JavaScript', link: '/pages/' },
+          '/pages/web端扫码功能实现.md'
         ],
       },
     ],
