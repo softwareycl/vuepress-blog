@@ -2,7 +2,7 @@
  * @Author: 颜常霖
  * @Date: 2022-09-20 09:51:55
  * @LastEditors: 颜常霖
- * @LastEditTime: 2023-03-13 17:36:36
+ * @LastEditTime: 2023-03-20 15:24:02
  * @Description:  
  */
 import type { NavbarConfig } from '@vuepress/theme-default'
@@ -58,7 +58,7 @@ export const navbarZh: NavbarConfig = [
     link: '/more/',
     children: [
       { text: '学习', link: '/pages/f2a556/' },
-      { text: '面试', link: '/pages/aea6571b7a8bae86/' },
+      { text: '面试', link: '/more/interview/js.md' },
       { text: '实用技巧', link: '/pages/baaa02/' },
     ],
   },
