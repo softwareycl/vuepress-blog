@@ -401,6 +401,27 @@ const messages = {
 
 推荐使用[i18n Ally](https://blog.csdn.net/louting249/article/details/113878278)插件，可以在`$t('common.message.greeting')`旁边显示对应的中文，提高代码可读性
 
+i18n Ally配置如下：
+
+```json
+{
+  "i18n-ally.localesPaths": [
+      "src/i18n/langs"
+  ],
+  // 以下需要自己配置
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.namespace": true,
+  "i18n-ally.enabledParsers": [
+      "json",
+      "js"
+  ],
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.sourceLanguage": "zh",
+  "i18n-ally.displayLanguage": "zh",
+  // "i18n-ally.annotationInPlace": false,
+}
+```
+
 ## 参考资料
 
 [1.四种方式解决页面国际化问题——步骤详解](https://blog.csdn.net/qq_41485414/article/details/81093999)
