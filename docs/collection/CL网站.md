@@ -8,6 +8,7 @@ sidebarDepth: 1
 
 * [Evan收藏](https://b.xugaoyi.com/pages/beb6c0bd8a66cea6/)
 * [Hooray收藏](https://hooray.github.io/)
+* [前端森林](https://fesites.netlify.app/)
 
 ## vscode 配置
 

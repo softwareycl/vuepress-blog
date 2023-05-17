@@ -10,10 +10,10 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 export const navbarZh: NavbarConfig = [
   { text: '首页', link: '/' },
   {
-    text: 'VUE相关',
+    text: 'Vue',
     children: [
       {
-        text: 'VUE3',
+        text: 'Vue3',
         children: [
           '/vue/vue3/README.md'
         ]
@@ -50,6 +50,10 @@ export const navbarZh: NavbarConfig = [
       { 
         text: '博客搭建',
         link: '/technology/github-pages.md'
+      },
+      { 
+        text: 'chrome 调试技巧',
+        link: '/technology/chrome调试技巧.md'
       },
     ],
   },

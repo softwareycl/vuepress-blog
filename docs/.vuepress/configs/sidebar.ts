@@ -43,11 +43,12 @@ export const sidebarZh: SidebarConfig = {
   ],
   '/technology/': [
     {
-      text: '博客搭建',
+      text: '技术',
       collapsible: true,
       children: [
         '/technology/github-pages.md',
         '/technology/vuePress.md',
+        '/technology/chrome调试技巧.md',
       ],
     },
   ],
