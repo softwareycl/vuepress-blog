@@ -30,6 +30,7 @@ sidebarDepth: 1
 * [wangEditor 富文本编辑起](https://www.wangeditor.com/)
 * [DataV 数据大屏](http://datav.jiaminghi.com/)
 * [tcplayer 播放器](https://cloud.tencent.com/document/product/266/58772)
+* [vue-seamless-scroll 一个简单的基于vue.js的无缝滚动](https://chenxuan0000.github.io/vue-seamless-scroll/zh/)
 
 ## js库
 
