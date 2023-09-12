@@ -10,6 +10,10 @@ sidebarDepth: 1
 * [Hooray收藏](https://hooray.github.io/)
 * [前端森林](https://fesites.netlify.app/)
 
+## Vue
+
+* [剖析keep-alive的实现原理](https://zhuanlan.zhihu.com/p/385512650)
+
 ## vscode 配置
 
 * [简单一步到位同步你的 VSCode 全部配置](https://blog.csdn.net/weixin_43131046/article/details/123118022)
