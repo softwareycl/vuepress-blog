@@ -1,8 +1,8 @@
 /*
  * @Author: 颜常霖
  * @Date: 2022-09-20 09:51:55
- * @LastEditors: 颜常霖
- * @LastEditTime: 2023-03-20 15:24:02
+ * @LastEditors: CL
+ * @LastEditTime: 2023-09-16 22:17:56
  * @Description:  
  */
 import type { NavbarConfig } from '@vuepress/theme-default'
@@ -10,18 +10,24 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 export const navbarZh: NavbarConfig = [
   { text: '首页', link: '/' },
   {
-    text: 'Vue',
+    text: '框架',
     children: [
       {
         text: 'Vue3',
         children: [
-          '/vue/vue3/README.md'
+          '/framework/vue3/README.md'
+        ]
+      },
+      {
+        text: 'React',
+        children: [
+          '/framework/react/react学习分享.md'
         ]
       },
       {
         text: '其他',
         children: [
-          '/vue/other/Vue-I18n.md'
+          '/framework/other/Vue-I18n.md'
         ],
       },
     ],

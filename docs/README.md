@@ -4,8 +4,8 @@ heroImage: /images/logo.png
 heroText: null
 tagline: 记录日常，快乐摸鱼
 features:
-- title: VUE相关
-  details: Vue相关技术。
+- title: 框架相关
+  details: Vue、React等框架。
 - title: 前端
   details: html、css、js、小程序、框架等前端技术。
 - title: 笔记

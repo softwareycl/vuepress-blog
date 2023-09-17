@@ -1,28 +1,37 @@
 /*
  * @Author: CL
  * @Date: 2022-09-18 22:14:11
- * @LastEditors: 颜常霖
- * @LastEditTime: 2023-03-20 15:25:20
+ * @LastEditors: CL
+ * @LastEditTime: 2023-09-16 22:19:43
  * @Description: 
  */
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const sidebarZh: SidebarConfig = {
-  '/vue/vue3': [
+  '/framework/vue3': [
     {
-      text: 'VUE3',
+      text: 'Vue3',
       collapsible: true,
       children: [
-        '/vue/vue3/README.md',
+        '/framework/vue3/README.md',
       ],
     },
   ],
-  '/vue/other': [
+  '/framework/react': [
+    {
+      text: 'React',
+      collapsible: true,
+      children: [
+        '/framework/react/react学习分享.md',
+      ],
+    },
+  ],
+  '/framework/other': [
     {
       text: '国际化',
       collapsible: true,
       children: [
-        '/vue/other/Vue-I18n.md',
+        '/framework/other/Vue-I18n.md',
       ],
     },
   ],
