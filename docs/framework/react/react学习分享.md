@@ -1,6 +1,9 @@
 # react学习分享
 
+## 目录
+
 - [react学习分享](#react学习分享)
+  - [目录](#目录)
   - [渲染和提交](#渲染和提交)
     - [步骤1：触发一次渲染](#步骤1触发一次渲染)
     - [步骤2：React 渲染您的组件](#步骤2react-渲染您的组件)
@@ -11,6 +14,17 @@
     - [随时间变化的 state](#随时间变化的-state)
   - [把一系列 state 更新加入队列](#把一系列-state-更新加入队列)
     - [React 会对 state 更新进行批处理](#react-会对-state-更新进行批处理)
+    - [在下次渲染前多次更新同一个 state](#在下次渲染前多次更新同一个-state)
+  - [更新 state 中的对象](#更新-state-中的对象)
+    - [什么是 mutation？](#什么是-mutation)
+    - [使用展开语法复制对象](#使用展开语法复制对象)
+    - [使用 Immer 编写简洁的更新逻辑](#使用-immer-编写简洁的更新逻辑)
+  - [更新 state 中的数组](#更新-state-中的数组)
+    - [在没有 mutation 的前提下更新数组](#在没有-mutation-的前提下更新数组)
+      - [向数组中添加元素](#向数组中添加元素)
+      - [从数组中删除元素](#从数组中删除元素)
+      - [转换/替换数组](#转换替换数组)
+      - [向数组插入元素](#向数组插入元素)
 
 ## 渲染和提交
 
@@ -142,6 +156,344 @@ export default function Counter() {
 
 ### React 会对 state 更新进行批处理
 
-**React 会等到事件处理函数中的 所有 代码都运行完毕再处理你的 state 更新。**
+**React 会等到事件处理函数中的所有代码都运行完毕再处理你的 state 更新。**
 
-这让你可以更新多个 state 变量——甚至来自多个组件的 state 变量——而不会触发太多的 重新渲染。但这也意味着只有在你的事件处理函数及其中任何代码执行完成 之后，UI 才会更新。这种特性也就是 批处理，它会使你的 React 应用运行得更快。它还会帮你避免处理只​​更新了一部分 state 变量的令人困惑的“半成品”渲染。
+这让你可以更新多个 state 变量——甚至来自多个组件的 state 变量——而不会触发太多的 重新渲染。但这也意味着只有在你的事件处理函数及其中任何代码执行完成 之后，UI 才会更新。这种特性也就是 **批处理**。
+
+### 在下次渲染前多次更新同一个 state
+
+如果你想在下次渲染之前多次更新同一个 state，你可以像 ``setNumber(n => n + 1)`` 这样传入一个根据队列中的前一个 state 计算下一个 state 的 函数，而不是像 ``setNumber(number + 1)`` 这样传入 下一个 state 值
+
+```js
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(n => n + 1);
+        setNumber(n => n + 1);
+        setNumber(n => n + 1);
+      }}>+3</button>
+    </>
+  )
+}
+```
+
+在这里，n => n + 1 被称为 **更新函数**。当你将它传递给一个 state 设置函数时：
+
+1. React 会将此函数加入队列，以便在事件处理函数中的所有其他代码运行后进行处理。
+2. 在下一次渲染期间，React 会遍历队列并给你更新之后的最终 state。
+
+
+## 更新 state 中的对象
+
+state 中可以保存任意类型的 JavaScript 值，包括对象。但是，你不应该直接修改存放在 React state 中的对象。相反，当你想要更新一个对象时，你需要创建一个新的对象（或者将其拷贝一份），然后将 state 更新为此对象。
+
+### 什么是 mutation？
+
+数字、字符串和布尔值，这些类型的值在 JavaScript 中是不可变（immutable）的，这意味着它们不能被改变或是只读的。你可以通过替换它们的值以触发一次重新渲染。
+
+现在考虑 state 中存放对象的情况：
+
+```js
+const [position, setPosition] = useState({ x: 0, y: 0 });
+```
+
+从技术上来讲，可以改变对象自身的内容。当你这样做时，就制造了一个 mutation：
+
+```js
+position.x = 5;
+```
+
+虽然严格来说 React state 中存放的对象是可变的，但你应该像处理数字、布尔值、字符串一样将它们视为不可变的。因此你应该替换它们的值，而不是对它们进行修改。
+
+### 使用展开语法复制对象
+
+下面的代码中，输入框并不会正常运行，因为 onChange 直接修改了 state (直接修改不会触发渲染)：
+
+```js
+import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com'
+  });
+
+  function handleFirstNameChange(e) {
+    person.firstName = e.target.value;
+  }
+
+  function handleLastNameChange(e) {
+    person.lastName = e.target.value;
+  }
+
+  function handleEmailChange(e) {
+    person.email = e.target.value;
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input
+          value={person.firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={person.lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          value={person.email}
+          onChange={handleEmailChange}
+        />
+      </label>
+      <p>
+        {person.firstName}{' '}
+        {person.lastName}{' '}
+        ({person.email})
+      </p>
+    </>
+  );
+}
+
+```
+
+想要实现你的需求，最可靠的办法就是创建一个新的对象并将它传递给 setPerson。但是在这里，你还需要 把当前的数据复制到新对象中，因为你只改变了其中一个字段：
+
+```js
+setPerson({
+  firstName: e.target.value, // 从 input 中获取新的 first name
+  lastName: person.lastName,
+  email: person.email
+});
+```
+
+可以使用 ... 对象展开 语法，这样你就不需要单独复制每个属性。
+
+```js
+setPerson({
+  ...person, // 复制上一个 person 中的所有字段
+  firstName: e.target.value // 但是覆盖 firstName 字段 
+});
+```
+
+现在表单可以正常运行了！
+
+```js
+import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com'
+  });
+
+  function handleFirstNameChange(e) {
+    setPerson({
+      ...person,
+      firstName: e.target.value
+    });
+  }
+
+  function handleLastNameChange(e) {
+    setPerson({
+      ...person,
+      lastName: e.target.value
+    });
+  }
+
+  function handleEmailChange(e) {
+    setPerson({
+      ...person,
+      email: e.target.value
+    });
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input
+          value={person.firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={person.lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          value={person.email}
+          onChange={handleEmailChange}
+        />
+      </label>
+      <p>
+        {person.firstName}{' '}
+        {person.lastName}{' '}
+        ({person.email})
+      </p>
+    </>
+  );
+}
+
+```
+
+### 使用 Immer 编写简洁的更新逻辑 
+
+Immer 是一个非常流行的库，它可以让你使用简便但可以直接修改的语法编写代码，并会帮你处理好复制的过程。
+
+尝试使用 Immer:
+
+运行 npm install use-immer 添加 Immer 依赖
+
+用 import { useImmer } from 'use-immer' 替换掉 import { useState } from 'react'
+
+下面我们把上面的例子用 Immer 实现一下：
+
+```js
+import { useImmer } from 'use-immer'
+
+export default function Form() {
+  const [person, updatePerson] = useImmer({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com'
+  });
+
+  function handleFirstNameChange(e) {
+    updatePerson(draft => {
+      draft.firstName = e.target.value;
+    });
+  }
+
+  function handleLastNameChange(e) {
+    updatePerson(draft => {
+      draft.lastName = e.target.value;
+    });
+  }
+
+  function handleEmailChange(e) {
+    updatePerson(draft => {
+      draft.email = e.target.value;
+    });
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input
+          value={person.firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={person.lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          value={person.email}
+          onChange={handleEmailChange}
+        />
+      </label>
+      <p>
+        {person.firstName}{' '}
+        {person.lastName}{' '}
+        ({person.email})
+      </p>
+    </>
+  );
+}
+```
+
+
+## 更新 state 中的数组
+
+### 在没有 mutation 的前提下更新数组
+
+在 JavaScript 中，数组只是另一种对象。同对象一样，你需要将 React state 中的数组视为只读的。这意味着你不应该使用类似于 ``arr[0] = 'bird'`` 这样的方式来重新分配数组中的元素，也不应该使用会直接修改原始数组的方法，例如 ``push()`` 和 ``pop()``。
+
+相反，每次要更新一个数组时，你需要把一个新的数组传入 state 的 setting 方法中。为此，你可以通过使用像 ``filter()`` 和 ``map()`` 这样不会直接修改原始值的方法，从原始数组生成一个新的数组。然后你就可以将 state 设置为这个新生成的数组。
+
+或者，你可以使用 Immer 。
+
+#### 向数组中添加元素
+
+```js
+let initialArtists = [
+  { id: 0, name: 'Marta Colvin Andrade' },
+  { id: 1, name: 'Lamidi Olonade Fakeye'},
+  { id: 2, name: 'Louise Nevelson'},
+];
+
+···
+
+const [artists, setArtists] = useState(
+  initialArtists
+);
+
+setArtists( // 替换 state
+  [ // 是通过传入一个新数组实现的
+    ...artists, // 新数组包含原数组的所有元素
+    { id: 3, name: 'test' } // 并在末尾添加了一个新的元素
+  ]
+);
+```
+
+#### 从数组中删除元素 
+
+```js
+setArtists(
+  artists.filter(a => a.id !== 1)
+);
+```
+
+#### 转换/替换数组
+
+```js
+artists.map(artist => {
+  return {
+    id: artist.id + 1,
+    name: artist.name
+  }
+})
+```
+
+#### 向数组插入元素
+
+```js
+const insertAt = 1; // 可能是任何索引
+const nextArtists = [
+// 插入点之前的元素：
+...artists.slice(0, insertAt),
+// 新的元素：
+{ id: nextId++, name: name },
+// 插入点之后的元素：
+...artists.slice(insertAt)
+];
+setArtists(nextArtists);
+```
