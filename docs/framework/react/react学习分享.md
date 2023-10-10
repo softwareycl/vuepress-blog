@@ -25,6 +25,7 @@
       - [从数组中删除元素](#从数组中删除元素)
       - [转换/替换数组](#转换替换数组)
       - [向数组插入元素](#向数组插入元素)
+      - [更新数组内部的对象](#更新数组内部的对象)
 
 ## 渲染和提交
 
@@ -475,12 +476,13 @@ setArtists(
 #### 转换/替换数组
 
 ```js
-artists.map(artist => {
+const nextArtists = artists.map(artist => {
   return {
     id: artist.id + 1,
     name: artist.name
   }
 })
+setArtists(nextArtists);
 ```
 
 #### 向数组插入元素
@@ -496,4 +498,18 @@ const nextArtists = [
 ...artists.slice(insertAt)
 ];
 setArtists(nextArtists);
+```
+
+#### 更新数组内部的对象
+
+```js
+setArtists(artists.map(artist => {
+  if (artist.id === 0) {
+    // 创建包含变更的*新*对象
+    return { ...artist, name: "test" };
+  } else {
+    // 没有变更
+    return artist;
+  }
+}));
 ```
