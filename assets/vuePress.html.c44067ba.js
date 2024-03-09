@@ -1,0 +1,1 @@
+import{_ as s,o as r,c as t,a as e,b as a}from"./app.259615b5.js";const c={},o=e("h1",{id:"vuepress",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#vuepress","aria-hidden":"true"},"#"),a(" VuePress")],-1),n=[o];function _(d,i){return r(),t("div",null,n)}const h=s(c,[["render",_],["__file","vuePress.html.vue"]]);export{h as default};
